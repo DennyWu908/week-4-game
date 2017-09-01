@@ -56,24 +56,30 @@ $(".crystal4-button").on("click", function() {
 	$(".player-score").html(playerScore);
 })
 
-// If the player's score is equal to the target number, they win, and they receive a point. However, if their score goes over the number, they lose, and their tally of losses goes up. Once the game is complete, their score is reset to 0, and a new target number is generated.
+// If the player's score is equal to the target number, they win, and they receive a point. However, if their score goes over the number, they lose, and their tally of losses goes up. Once the game is complete, their score will be reset to 0, and a new target number will be generated.
 
-if (playerScore === goalNumber) {
+$(".number-button").on("click", function() {
 
-	alert("You Win!")
-	playerWins += 1
-	$(".player-wins").html("Wins:" + playerWins)
-	playerScore = 0
-	goalNumber = Math.round(((Math.random() + 1) * 25))
+	if (playerScore === goalNumber) {
 
-} else if (playerScore > goalNumber) {
+		playerWins += 1
+		console.log("Wins:" + playerWins)
+		$(".player-wins").html("Wins:" + playerWins)
+		playerScore = 0
+		goalNumber = Math.round(((Math.random() + 1) * 25))
+		// alert("You Win!")
 
-	alert("Sorry, you lost.")
-	playerLosses += 1
-	$(".player-losses").html("Losses:" + playerLosses)
-	playerScore = 0
-	goalNumber = Math.round(((Math.random() + 1) * 25))
+	} else if (playerScore > goalNumber) {
 
-}
+		playerLosses += 1
+		console.log("Losses:" + playerLosses)
+		$(".player-losses").html("Losses:" + playerLosses)
+		playerScore = 0
+		goalNumber = Math.round(((Math.random() + 1) * 25))
+		// alert("Sorry, you lost.")
+
+	}
+
+})
 
 })
