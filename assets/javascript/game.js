@@ -56,7 +56,7 @@ $(".crystal4-button").on("click", function() {
 	$(".player-score").html(playerScore);
 })
 
-// If the player's score is equal to the target number, they win, and they receive a point. However, if their score goes over the number, they lose, and their tally of losses goes up.
+// If the player's score is equal to the target number, they win, and they receive a point. However, if their score goes over the number, they lose, and their tally of losses goes up. Once the game is complete, their score is reset to 0, and a new target number is generated.
 
 if (playerScore === goalNumber) {
 
