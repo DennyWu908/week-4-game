@@ -70,6 +70,11 @@ $(".number-button").on("click", function() {
 		playerScore = 0
 		$(".player-score").html(playerScore);
 
+		crystalOne = Math.floor((Math.random() * 12) + 1);
+		crystalTwo = Math.floor((Math.random() * 12) + 1);
+		crystalThree = Math.floor((Math.random() * 12) + 1);
+		crystalFour = Math.floor((Math.random() * 12) + 1);
+
 		goalNumber = Math.round(((Math.random() + 1) * 25))
 		$(".target-number").html(goalNumber);
 		alert("You Win!")
@@ -82,6 +87,11 @@ $(".number-button").on("click", function() {
 
 		playerScore = 0
 		$(".player-score").html(playerScore);
+
+		crystalOne = Math.floor((Math.random() * 12) + 1);
+		crystalTwo = Math.floor((Math.random() * 12) + 1);
+		crystalThree = Math.floor((Math.random() * 12) + 1);
+		crystalFour = Math.floor((Math.random() * 12) + 1);
 
 		goalNumber = Math.round(((Math.random() + 1) * 25))
 		$(".target-number").html(goalNumber);
