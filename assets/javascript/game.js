@@ -1,0 +1,65 @@
+$(document).ready(function () {
+
+// First, I need to create a variable for the target number. This is the number that someone playing the game must meet in order to win. It is randomly generated number and will be between 25 and 48.
+
+var goalNumber = Math.round(((Math.random() + 1) * 25))
+
+// This line will print the value of the target number to the correct div.
+
+$(".target-number").html(goalNumber);
+
+// The following are variables for the player's number of wins and losses.
+
+var playerWins = 0
+
+$(".player-wins").html("Wins:" + playerWins)
+
+var playerLosses = 0
+
+$(".player-losses").html("Losses:" + playerLosses)
+
+// Next, I need variables for the crystals. The value of each variable is also a randomly generated number (between 1 and 10), which the player must add to their score. The goal of the game is to have a score equal to the target number.
+
+var crystalOne = Math.round((Math.random() + 0.1) * 10);
+
+var crystalTwo = Math.round((Math.random() + 0.1) * 10);
+
+var crystalThree = Math.round((Math.random() + 0.1) * 10);
+
+var crystalFour = Math.round((Math.random() + 0.1) * 10);
+
+// When the game starts, the player's score will be 0.
+
+var playerScore = 0
+
+$(".player-score").html(playerScore);
+
+// When any of the crystal buttons is clicked, the value will be added to the the player's score.
+
+$(".crystal1-button").on("click", function() {
+	playerScore += crystalOne
+	$(".player-score").html(playerScore);
+})
+
+$(".crystal2-button").on("click", function() {
+	playerScore += crystalTwo
+	$(".player-score").html(playerScore);
+})
+
+$(".crystal3-button").on("click", function() {
+	playerScore += crystalThree
+	$(".player-score").html(playerScore);
+})
+
+$(".crystal4-button").on("click", function() {
+	playerScore += crystalFour
+	$(".player-score").html(playerScore);
+})
+
+if (playerScore === goalNumber) {
+	playerWins += 1
+} else if (playerScore > goalNumber) {
+	playerLosses += 1
+}
+
+})
