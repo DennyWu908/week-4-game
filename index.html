@@ -18,9 +18,9 @@
   			<h1 class="text-center"><strong>Crystals Collector!</strong></h1>
   		</div>
 
-		<!-- The left column, which will contain the instructions and display the player's wins and losses -->
+		<!-- The left column, which will contain the instructions. -->
   		<div class="row">
-  			<div class="col-lg-6">
+  			<div class="col-lg-5">
 
   				<div class="panel panel-default">
   					<div class="panel-heading">
@@ -35,6 +35,29 @@
             </div>
   				</div>
 
+  			</div>
+
+        <!-- The right column, which will display the target number, the player's score, the record of the player's wins and losses, and the four crystal buttons. -->
+
+        <div class="col-sm-2">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Target Number</h3>
+            </div>
+            <div class="panel-body"></div>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Your Score</h3>
+            </div>
+            <div class="panel-body"></div>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Record</h3>
@@ -44,36 +67,24 @@
               <h5 id="player-losses">Losses: 0</h5>
             </div>
           </div>
-
-  			</div>
-
-        <!-- The right column, which will display the target number, the player's score, and the four crystal buttons. -->
-
-        <div class="col-lg-6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Target Number</h3>
-            </div>
-            <div class="panel-body"></div>
-          </div>
         </div>
 
-        <div class="col-lg-6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Your Score</h3>
+          <div class="col-lg-7">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Crystals</h3>
+              </div>
+              <div class="panel-body">
+                <div class="text-center">
+                  <button class="btn btn-danger btn-lg crystal1-button"><span class="glyphicon glyphicon-plus-sign"></span> Crystal 1</button>
+                  <button class="btn btn-primary btn-lg crystal2-button"><span class="glyphicon glyphicon-plus-sign"></span> Crystal 2</button>
+                  <button class="btn btn-success btn-lg crystal3-button"><span class="glyphicon glyphicon-plus-sign"></span> Crystal 3</button>
+                  <button class="btn btn-warning btn-lg crystal4-button"><span class="glyphicon glyphicon-plus-sign"></span> Crystal 4</button>
+                </div>
+              </div>
             </div>
-            <div class="panel-body"></div>
           </div>
-        </div>
 
-        <div class="col-lg-6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Crystals</h3>
-            </div>
-            <div class="panel-body"></div>
-          </div>
         </div>
 
   		</div>
