@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-// First, I need to create a variable for the target number. This is the number that someone playing the game must meet in order to win. It is randomly generated number and will be between 25 and 48.
+// First, I need to create a variable for the target number. This is the number that someone playing the game must meet in order to win. It is randomly generated number and will be between 19 and 120. I need to check the code for the generation of this number.
 
-var goalNumber = Math.round(((Math.random() + 1) * 25))
+var goalNumber = Math.floor((Math.random() * 113) + 19);
 
 // This line will print the value of the target number to the correct div.
 
@@ -18,15 +18,15 @@ var playerLosses = 0
 
 $(".player-losses").html("Losses:" + playerLosses)
 
-// Next, I need variables for the crystals. The value of each variable is also a randomly generated number (between 1 and 10), which the player must add to their score. The goal of the game is to have a score equal to the target number.
+// Next, I need variables for the crystals. The value of each variable is also a randomly generated number (between 1 and 12), which the player must add to their score. The goal of the game is to have a score equal to the target number.
 
-var crystalOne = Math.round((Math.random() + 0.1) * 10);
+var crystalOne = Math.round((Math.random() + 0.1) * 12);
 
-var crystalTwo = Math.round((Math.random() + 0.1) * 10);
+var crystalTwo = Math.round((Math.random() + 0.1) * 12);
 
-var crystalThree = Math.round((Math.random() + 0.1) * 10);
+var crystalThree = Math.round((Math.random() + 0.1) * 12);
 
-var crystalFour = Math.round((Math.random() + 0.1) * 10);
+var crystalFour = Math.round((Math.random() + 0.1) * 12);
 
 // When the game starts, the player's score will be 0.
 
@@ -56,10 +56,24 @@ $(".crystal4-button").on("click", function() {
 	$(".player-score").html(playerScore);
 })
 
+// If the player's score is equal to the target number, they win, and they receive a point. However, if their score goes over the number, they lose, and their tally of losses goes up.
+
 if (playerScore === goalNumber) {
+
+	alert("You Win!")
 	playerWins += 1
+	$(".player-wins").html("Wins:" + playerWins)
+	playerScore = 0
+	goalNumber = Math.round(((Math.random() + 1) * 25))
+
 } else if (playerScore > goalNumber) {
+
+	alert("Sorry, you lost.")
 	playerLosses += 1
+	$(".player-losses").html("Losses:" + playerLosses)
+	playerScore = 0
+	goalNumber = Math.round(((Math.random() + 1) * 25))
+
 }
 
 })
